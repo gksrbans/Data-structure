@@ -21,11 +21,11 @@
   URL : https://programmers.co.kr/learn/challenges
 '''
 ```
-리스트의 조작은 밥먹듯이 하는 기본적인 것으로 리스트의 조작은 가볍게 pass 하도록 한다.
+리스트의 조작은 밥먹듯이 하는 기본적인 것으로 리스트의 조작은 가볍게 pass 하도록 한다.  
 ㄴ 리스트 조작하기 : https://dojang.io/mod/page/view.php?id=2281
 
-그런데 문득 append()와 extend()의 차이가 무엇인지 궁금해서 구글링을 하였다.
-ㄴ 결론 : append는 x 그 자체를 원소로 넣고 extend는 iterable의 각 항목들을 넣습니다
+그런데 문득 append()와 extend()의 차이가 무엇인지 궁금해서 구글링을 하였다.  
+ㄴ 결론 : append는 x 그 자체를 원소로 넣고 extend는 iterable의 각 항목들을 넣습니다  
 ㄴ https://m.blog.naver.com/PostView.nhn?blogId=wideeyed&logNo=221541104629&categoryNo=50&proxyReferer=
 
 # Programmers in python 
