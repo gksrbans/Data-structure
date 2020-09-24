@@ -11,16 +11,9 @@
 > 시간복잡도 O(1)에 해당하는 리스트 원소의 추가,삭제(append, pop)은 리스트의 마지막에 요소를 넣었다가 뺐다가 한다.
 
 > 하지만 시간복잡도 O(n)에 해당하는 리스트 내 원소의 삽입이나 제거(?) (insert, del) 은 리스트의 index 위치를 파라미터로 입력받는 차이점이 있다. ex) insert([index], element), del(list[index])
-   
-  ```sh
-# -*- conding: utf-8 -*-
 
-'''
-  Author : gksrbans123@gmail.com
-  Date : 2020-09-22
-  URL : https://programmers.co.kr/learn/challenges
-'''
-```
+
+
 리스트의 조작은 밥먹듯이 하는 기본적인 것으로 리스트의 조작은 가볍게 pass 하도록 한다.  
 ㄴ 리스트 조작하기 : https://dojang.io/mod/page/view.php?id=2281
 
