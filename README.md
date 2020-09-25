@@ -21,6 +21,46 @@
 ㄴ 결론 : append는 x 그 자체를 원소로 넣고 extend는 iterable의 각 항목들을 넣습니다  
 ㄴ https://m.blog.naver.com/PostView.nhn?blogId=wideeyed&logNo=221541104629&categoryNo=50&proxyReferer=
 
+## 2. 정렬(Sorting)
+
+#### 1) 선택정렬 (Selection Sort)
+- 시간복잡도 : O(N^2)
+- 선택정렬은 입력된 값 이외에 추가적인 메모리를 요구하지 않는 '제자리 정렬'의 일종이다.
+- 내림차순의 배열을 오름차순으로 정렬할 때 가장 큰 효율을 자랑한다.
+- 주어진 배열에서 최소값(min)을 찾은 후, 그 값을 배열의 가장 앞의 요소와 바꾼다.
+- 이후 맨처음 위치를 빼고 상기 과정을 반복해서 정렬을 완성한다.
+
+- 장점으로 자료의 이동 횟수가 미리 결정되지만, 같은 값의 요소인 경우 연산을 할 수도 있음.
+```sh
+# 랜덤한 리스트 생성 후 선택 정렬.
+import random
+
+def randomList(num):
+    result = []
+    for i in range(num):
+            result.append(random.randint(0, num))
+    return result
+
+def selectionSort(x):
+    length = len(x)
+    for i in range(length - 1):
+        indexMin = i;
+        for j in range(i + 1, length):
+            if x[indexMin] > x[j]:
+                indexMin = j
+        x[i], x[indexMin] = x[indexMin], x[i]
+    return x
+
+x = randomList(7777)
+
+print(x)
+print(selectionSort(x))
+```
+
+> Reference : https://gmlwjd9405.github.io/2018/05/06/algorithm-selection-sort.html
+
+
+
 # Programmers in python 
 
 See [Programmers](https://programmers.co.kr/)
