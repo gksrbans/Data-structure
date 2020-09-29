@@ -60,6 +60,24 @@ print(selectionSort(x))
 > Reference : https://gmlwjd9405.github.io/2018/05/06/algorithm-selection-sort.html
 
 
+#### 2) 삽입정렬 (Insertion Sort)
+
+- 시간복잡도 : O(N^2)
+- 자료 배열의 모든 요소를 앞에서부터 차례대로 이미 정렬된 배열 부분과 비교하여, 자신의 위치를 찾아 삽입함.
+- 삽입정렬은 이름 그대로 원하는 위치에 원소를 삽입하는 정렬임.
+- 대상으로하는 리스트가 이미 정렬되어있는 상태에 가까울 때 최고의 효율을 자랑함.  ex) [1,2,3,4,5,7,6]
+- 단점은 반대로 내림차순을 오름차순으로 바꿀경우 효율이 좋지 않음.
+
+```sh
+# 2번째 원소부터 써치
+def insert_sort(x):
+    for i in range(1, len(x)):
+        for j in range(i, 0, -1):
+            if x[j-1] > x[j]:
+                x[j-1], x[j] = x[j], x[j-1]
+```
+
+> Reference : https://www.daleseo.com/sort-insertion/
 
 # Programmers in python 
 
