@@ -96,6 +96,45 @@ def bubble_sort(x):
     return x
 ```
 
+
+## 2. 스택/큐 (Stack/Queue) 
+
+#### 1) 스택(Stack)
+- 리스트의 한 쪽 끝에서만 자료를 넣고 뺄 수 있는 LIFO(후입선출) 자료구조.
+- PUSH / POP을 이용해 레코드를 한쪽에서만 넣었다 뺐다함.
+- Stack overflow는 스택이 꽉차서 레코드가 안들어갈 때, Stack underflow는 삭제해야할 자료가 남아있지 않을 때  
+※ Stack에 기억되어 있는 자료를 삭제시킬 때는 제일 먼저 삭제할 자료가 있는지 없는지부터 확인해야 한다.
+
+
+```sh
+# Stack Class
+
+class stack:
+    def __init__(self):
+        self.items = []
+
+    def push(self, item):
+        self.items.append(item)
+
+    def pop(self):
+        return self.items.pop()
+
+    def isEmpty(self):
+        return not self.items
+
+stk = stack()
+print(stk)
+print(stk.isEmpty())
+stk.push(1)
+stk.push(2)
+
+print(stk.pop())
+print(stk.pop())
+print(stk.isEmpty())
+
+```
+
+> Reference : https://korbillgates.tistory.com/79
 # Programmers in python 
 
 See [Programmers](https://programmers.co.kr/)
