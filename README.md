@@ -134,7 +134,7 @@ print(stk.isEmpty())
 
 ```
 
-> Reference : https://korbillgates.tistory.com/79
+> Reference : https://korbillgates.tistory.com/79, https://daimhada.tistory.com/105
 # Programmers in python 
 
 See [Programmers](https://programmers.co.kr/)
