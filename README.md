@@ -62,7 +62,7 @@ print(selectionSort(x))
 
 #### 2) 삽입정렬 (Insertion Sort)
 
-- 시간복잡도 : O(N^2)
+- 시간복잡도 : O(N ~ N^2)
 - 자료 배열의 모든 요소를 앞에서부터 차례대로 이미 정렬된 배열 부분과 비교하여, 자신의 위치를 찾아 삽입함.
 - 삽입정렬은 이름 그대로 원하는 위치에 원소를 삽입하는 정렬임.
 - 대상으로하는 리스트가 이미 정렬되어있는 상태에 가까울 때 최고의 효율을 자랑함.  ex) [1,2,3,4,5,7,6]
@@ -78,6 +78,23 @@ def insert_sort(x):
 ```
 
 > Reference : https://www.daleseo.com/sort-insertion/
+
+
+#### 3) 버블정렬 (Bubble Sort)
+- 시간복잡도 : O(N^2)
+- 서로 인접한 두 레코드를 검사하여 정렬하는 알고리즘.
+- 역시 시간복잡도 좋지 않아 잘 사용하지 않음.
+- 장점으로 구현이 매우 간단하지만, 인접한 레코드를 바꾸는 것(SWAP) 보다 맞는 위치로 옮기는 거(MOVE)가 효율이 좋음.
+
+```sh
+def bubble_sort(x):
+    for i in range(len(x)-1):
+        temp = i
+        for j in range(i+1, len(x)):
+            if x[j] < x[i]:
+                x[j], x[i] = x[i], x[j]
+    return x
+```
 
 # Programmers in python 
 
