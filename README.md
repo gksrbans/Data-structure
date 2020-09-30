@@ -100,7 +100,7 @@ def bubble_sort(x):
 ## 2. 스택/큐 (Stack/Queue) 
 
 #### 1) 스택(Stack)
-- 리스트의 한 쪽 끝에서만 자료를 넣고 뺄 수 있는 LIFO(후입선출) 자료구조.
+- 리스트의 한 쪽 끝에서만 자료를 넣고 뺄 수 있는 LIFO(후입선출) 자료구조. LIFO Queue 라고도 불림.
 - PUSH / POP을 이용해 레코드를 한쪽에서만 넣었다 뺐다함.
 - Stack overflow는 스택이 꽉차서 레코드가 안들어갈 때, Stack underflow는 삭제해야할 자료가 남아있지 않을 때  
 ※ Stack에 기억되어 있는 자료를 삭제시킬 때는 제일 먼저 삭제할 자료가 있는지 없는지부터 확인해야 한다.
@@ -135,6 +135,108 @@ print(stk.isEmpty())
 ```
 
 > Reference : https://korbillgates.tistory.com/79, https://daimhada.tistory.com/105
+
+
+#### 2) 큐(Queue)
+- 스택에 반대되는 개념으로 선입선출(FIFO) 
+- PUT / GET을 통해 리스트에 원소를 덧붙이거나 끝에서 꺼냄.
+- 리스트를 사용했을 경우 enqueue(추가) 시간복잡도는 O(1), dequeue(삭제) 시간복잡도는 O(N).
+- Queue의 종류는 선형큐, 환형큐, 우선순위큐 등이 있음.
+- 일반적인 선형큐는 마지막 index를 가리키는 변수가 있는데, dequeue를 할때마다 비어있는 공간이 생기게되면서 이를 활용할수 없게 됨.  
+ㄴ 이러한 방식을 해결하기 위해 원형큐가 나옴
+
+```sh
+class ListQueue(object):
+    def __init__(self):
+        self.queue = []
+
+    def enqueue(self, n):
+        self.queue.append(n)
+
+    def dequeue(self):
+        if len(self.queue) == 0:
+            return -1
+        return self.queue.pop(0)
+
+    def printQueue(self):
+        print(self.queue)
+
+lq = ListQueue()
+lq.enqueue(1)
+lq.enqueue(2)
+lq.enqueue(3)
+lq.enqueue(4)
+lq.printQueue()
+print(lq.dequeue())
+print(lq.dequeue())
+print(lq.dequeue())
+print(lq.dequeue())
+lq.printQueue()
+```
+
+- 파이썬은 collections.deque 모듈을 지원한다.
+- 데크는 double-ended-queue의 줄임말로 앞뒤 방향에서 데이터를 처리할 수 있게하는 자료구조이며 내부적으로 doubly 링크드 리스트로 구현이 되어있다고 한다.
+- 데크의 시간복잡도는 O(1)로 아주 강력한 놈이다.
+
+```sh
+from collections import deque
+
+dq = deque([])
+
+dq.append(1)
+dq.append(2)
+dq.append(3)
+dq.append(4)
+
+print(dq)
+
+dq.popleft()
+dq.popleft()
+dq.popleft()
+dq.popleft()
+
+print(dq)
+
+```
+> *collections.deque Reference : https://excelsior-cjh.tistory.com/96*
+
+
+- 파이썬의 Queue 모듈 사용해서도 구현이 가능하다.
+- Queue 모듈은 스레드 환경을 고려해서 작성되어 있기 때문에 동시에 여러개의 작업을 수행해도 전혀 문제되지 않는다.
+
+```sh
+import queue
+
+q = queue.Queue()
+
+q.put(1)
+q.put(2)
+q.put(3)
+q.put(4)
+
+
+print(q.get())
+print(q.get())
+print(q.get())
+print(q.get())
+
+
+from collections import deque
+
+class Queue(deque):
+    def enqueue(self, x):
+        super().append(x)
+
+    def dequeue(self):
+        super().popleft()
+
+    def display(self):
+        for node in self.__iter__():
+            print(node)
+```
+- Linked list Queue는 다음에 연결리스트 정리할 때 한번에 하는걸로...
+> Queue Reference : https://daimhada.tistory.com/107
+
 # Programmers in python 
 
 See [Programmers](https://programmers.co.kr/)
