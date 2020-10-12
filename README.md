@@ -97,7 +97,7 @@ def bubble_sort(x):
 ```
 
 
-## 2. 스택/큐 (Stack/Queue) 
+## 3. 스택/큐 (Stack/Queue) 
 
 #### 1) 스택(Stack)
 - 리스트의 한 쪽 끝에서만 자료를 넣고 뺄 수 있는 LIFO(후입선출) 자료구조. LIFO Queue 라고도 불림.
@@ -236,6 +236,51 @@ class Queue(deque):
 ```
 - Linked list Queue는 다음에 연결리스트 정리할 때 한번에 하는걸로...
 > Queue Reference : https://daimhada.tistory.com/107
+
+
+## 4. 힙 (Heap) 
+
+#### 힙 (Heap)
+- 우선순위 큐를 위해서 만들어진 자료구조. (가장 우선순위가 높은 레코드를 먼저 꺼낼 수(?) 있음!)
+- 시간복잡도 : O(logN) (삽입, 삭제 시)
+- 완전이진트리로 구성되어 있으며, 부모 노드는 자식 노드보다 반드시 크거나 같다. (최소 힙일 경우에는 반대 부모 노드가 자식노드보다 작거나 같다.)
+- 힙의 경우 배열 내 첫번 째 인덱스 0 은 건너뛰고 1부터 시작.
+- Python의 경우 HeapQ 모듈을 이용해 간단하게 구현할 수 있을 거로 보임.
+
+```sh
+# heapQ push,pop() 사용법
+
+import heapq
+# text  = "내이름은 한규문 명탐정 이죠"
+h = []
+heapq.heappush(h, (3, " 명탐정"))
+heapq.heappush(h, (4, " 이죠"))
+heapq.heappush(h, (1, "내이름은"))
+heapq.heappush(h, (2, " 한규문"))
+heapq.heappush(h, (5, " 훗"))
+
+print(h)
+
+first = heapq.heappop(h)
+second = heapq.heappop(h)
+third = heapq.heappop(h)
+print("first:", first)
+print("second:", second)
+print("third:", third)
+
+print(h)
+```
+> 힙에서의 부모 노드와 자식 노드의 관계  
+> 왼쪽 자식의 인덱스 = (부모의 인덱스) * 2  
+> 오른쪽 자식의 인덱스 = (부모의 인덱스) * 2 + 1  
+> 부모의 인덱스 = (자식의 인덱스) / 2  
+
+> Reference  
+> ㄴ https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html  
+> ㄴ https://velog.io/@junhok82/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-%ED%9E%99heap  
+> ㄴ HeapQ 모듈 : https://medium.com/@yhmin84/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%9A%B0%EC%84%A0%EC%88%9C%EC%9C%84-%ED%81%90-priority-queue-%EB%A5%BC-%EC%9C%84%ED%95%9C-heapq-%EB%AA%A8%EB%93%88-%EC%82%AC%EC%9A%A9%EB%B2%95-b33c4e0ef2b1  
+
+
 
 # Programmers in python 
 
