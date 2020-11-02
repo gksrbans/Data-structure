@@ -281,6 +281,18 @@ print(h)
 > ㄴ HeapQ 모듈 : https://medium.com/@yhmin84/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%9A%B0%EC%84%A0%EC%88%9C%EC%9C%84-%ED%81%90-priority-queue-%EB%A5%BC-%EC%9C%84%ED%95%9C-heapq-%EB%AA%A8%EB%93%88-%EC%82%AC%EC%9A%A9%EB%B2%95-b33c4e0ef2b1  
 
 
+## 5. 탐욕 알고리즘 (Greedy) 
+
+#### 탐욕 알고리즘 (Greedy) 
+- 부분적인 최적해가 전체의 해가되는 알고리즘.  
+- 매번 최선의 선택을 통해 전체 해를 맞춘다고 생각하면 됨   
+- 매번 최선의 선택을 하지만 그것이 반드시 최적화된 값이라고는 판정지을 수는 없다. 즉, 한번의 선택이 다음 선택에는 전혀 무관한 값이여야 하며 매 순간의 최적해가 문제에 대한 최적해여야 한다는 의미이다.  
+
+| 탐욕 알고리즘 Problems  
+| ㄴhttps://programmers.co.kr/learn/courses/30/parts/12244  
+
+> Reference  
+> ㄴhttps://namu.wiki/w/%EA%B7%B8%EB%A6%AC%EB%94%94%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98  
 
 # Programmers in python 
 
